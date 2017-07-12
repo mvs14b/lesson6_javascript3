@@ -4,19 +4,19 @@
 Web Application Development
 
 ### Assignment Date:  
-(Month Day, Year)
+(July 12, 2017)
 
 ### Student Name:  
-(First and Last Name)
+(Michael Shapley)
 
 ### Project Description:
-(In your own words, briefly describe the assignment.)
+(Editing and adding to existing code to ensure that a website properly scrolls through and displays pictures.)
 
 ### View Project:
 (Replace this statement with your Github Page URL that was created when you 
  published the project.)
 
 ### Lessons Learned in the Assignment:
-1. (Briefly describe a lesson/concept learned in this lesson.)
-2. (Briefly describe a lesson/concept learned in this lesson.)
-3. (Briefly describe a lesson/concept learned in this lesson.)
+1. How to eidt a photo.js file to properly display pictures on a website.)
+2. (How to code for multiple photos on a website and make sure that the photos can bescrolled through fluently by a user of the website.)
+3. (How to edit and preview different photos on a website whie actively editing the website. )
