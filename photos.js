@@ -9,13 +9,18 @@
 
 "use strict"; // interpret document contents in JavaScript strict mode
 
+
+
 /* global variables */
+
 var photoOrder = [1,2,3,4,5];
 var figureCount = 3;
 
 /*****************************************populateFigures() FUNCTION*************************************/
 /* This method adds src values to img elements based on order specified in photoOrder array             */
 /********************************************************************************************************/
+
+
 function populateFigures() {
     var filename;
     var currentFig;
@@ -31,6 +36,8 @@ if (figureCount === 3) {
         filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
         currentFig = document.getElementsByTagName("img")[i];
         currentFig.src = filename;
+        
+        
     }//end of for loop
 }//end of else
 
@@ -43,6 +50,8 @@ if (figureCount === 3) {
 /*********************************rightArrow() FUNCTION***************************************************/
 /* This method shifts all images one figure to the right, and change values in photoOrder array to match */
 /********************************************************************************************************/
+
+
 function rightArrow() {
    for (var i = 0; i < 5; i++) {
       if ((photoOrder[i] + 1) === 6) {
@@ -58,9 +67,13 @@ function rightArrow() {
 
 /***********************************END OF RIGHT ARROW FUNCTION******************************************/
 
+
+
 /********************************leftArrow() Function****************************************************/
 /*This method shifts all images one figure to the left, and change values in photoOrder array to match  */
 /********************************************************************************************************/
+
+
 function leftArrow() {
     for (var i = 0; i < 5; i++) {
         if ((photoOrder[i] - 1) === 0) {
@@ -74,56 +87,86 @@ function leftArrow() {
        }//end of for loop
 }//end of leftArrow Function
 
+
+
 /****************************END OF LEFT ARROW FUNCTION*************************************************/
 
 
 /***************************************previewFive() Function******************************************/
 /*           This method is executed to allow the photo gallery to shift to five image layout.         */
 /******************************************************************************************************/
+
+
 function previewFive() {
         
     //locate first element where the tag is article assign to a variable
+    
     var articleEl = document.getElementsByTagName("article")[0];
        
+       
+       
     // create figure and img elements for fifth image
+    
     var lastFigure = document.createElement("figure");
     
     lastFigure.id = "fig5";
+    
     lastFigure.style.zIndex = "5";
+    
     lastFigure.style.position = "absolute";
+    
     lastFigure.style.right = "45px";
+    
     lastFigure.style.top = "67px";
     
+    
+    
     //create img element for the fifth image
+    
     var lastImage = document.createElement("img");
+    
     lastImage.width = "240";
+    
     lastImage.height = "135";
+    
+    
     
     //add or attach the fifth image to preview 
     lastFigure.appendChild(lastImage);
     
     articleEl.appendChild(lastFigure);
     
+    
+    
     //clone figure element for fifth iage and edit to be first image
     var firstFigure = lastFigure.cloneNode(true);
     
     firstFigure.id = "fig1";
+    
     firstFigure.style.right = " ";
+    
     firstFigure.style.left = "45px";
     
     articleEl.insertBefore(firstFigure, document.getElementById("fig2"));
     
+    
+    
     //add appropriate src values to two new img elements 
     document.getElementsByTagName("img")[0].src = "images/IMG_0" + photoOrder[0] + "sm.jpg";
+    
     document.getElementsByTagName("img")[4].src = "images/IMG_0" + photoOrder[4] + "sm.jpg";
     
     figureCount = 5;
+    
+    
     
     //disable the 'Show more images' button after it has been selected once
     var numberButton = document.querySelector("#fiveButton p");
     numberButton.removeEventListener("click", previewFive, false);
     
 }//end of previewFive()
+
+
 
 /****************************************END of previewFive() Function**********************************/
 
@@ -132,6 +175,8 @@ function previewFive() {
 /***********************************createEventListeners() Function*************************************/
 /*         This method attaches event listeners to the buttons (left, right, and show all).            */
 /*******************************************************************************************************/
+
+
 function createEventListeners() {
    
 //declare variable for document element with id of leftarrow, which is in the html document 
@@ -169,15 +214,20 @@ showAllButton.addEventListener("click", previewFive, false);
 
 }//end of createEventListeners function.
 
+
+
 /************************************END OF createEventListeners() FUNCTION****************************/
 
 
 /************************************setUpPage() FUNCTION**********************************************/
+
+
 /* create event listeners and populate image elements */
 function setUpPage() {
    createEventListeners();
    populateFigures();
 }//end of setUpPage Function
+
 
 /***********************************END OF setUpPage() FUNCTION***************************************/
 
@@ -188,4 +238,7 @@ if (window.addEventListener) {
       window.addEventListener("load", setUpPage, false); 
 } else if (window.attachEvent)  {
       window.attachEvent("onload", setUpPage);
+      
+      
 }//end of else if
+
